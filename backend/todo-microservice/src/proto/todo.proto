@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+service ToDoService {
+    rpc CreateToDo (ToDo) returns (google.protobuf.Empty);
+}
+
+message ToDo {
+    string user_id = 1;
+    string message = 2;
+}
