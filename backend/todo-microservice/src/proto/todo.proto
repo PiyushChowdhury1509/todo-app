@@ -1,12 +1,16 @@
 syntax = "proto3";
 
-import "google/protobuf/empty.proto";
+package todo;
 
 service ToDoService {
-    rpc CreateToDo (ToDo) returns (google.protobuf.Empty);
+    rpc CreateToDo (CreateToDo) returns (CreateToDoResponse);
 }
 
-message ToDo {
+message CreateToDoResponse {
+    todo_id = 1;
+}
+
+message CreateToDo {
     string user_id = 1;
     string message = 2;
 }
